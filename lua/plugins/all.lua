@@ -3,7 +3,7 @@ return {
         "github/copilot.vim",
         config = function()
             vim.g.copilot_no_tab_map = true
-            vim.api.nvim_set_keymap("i", "<Tab>", 'copilot#Accept("") ? copilot#Accept("") : "<Tab>"',
+            vim.api.nvim_set_keymap("i", "<Tab>", 'copilot#Accept("")',
                 { silent = true, expr = true })
             vim.api.nvim_set_keymap("i", "<S-Tab>", "<Plug>(copilot-dismiss)", { silent = true })
         end,
@@ -25,6 +25,13 @@ return {
                     "markdown_inline",
                     "nu",
                     "dockerfile",
+                    "go",
+                    "gomod",
+                    "gosum",
+                    "gotmpl",
+                    "typescript",
+                    "tsx",
+                    "javascript",
                     "sql",
                 },
                 highlight = { enable = true },
@@ -112,6 +119,10 @@ return {
                     docker = { "dockerfmt" },
                     bash = { "shfmt" },
                     nu = { "nufmt" },
+                    go = { "gofmt" },
+                    javascript = { "prettierd", "prettier" },
+                    typescript = { "prettierd", "prettier" },
+                    typescriptreact = { "prettierd", "prettier" },
                     sql = { "sqruff" },
                 },
                 format_on_save = {
