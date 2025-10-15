@@ -139,13 +139,6 @@ return {
             require("gitsigns").setup({})
         end,
     },
-    -- {
-    --     "ibhagwan/fzf-lua",
-    --     dependencies = {
-    --         "nvim-mini/mini.icons",
-    --     },
-    --     opts = {},
-    -- },
     {
         "folke/tokyonight.nvim",
         lazy = false,
@@ -169,5 +162,11 @@ return {
         config = function()
             require("nvim-tree").setup {}
         end,
+    },
+    {
+        "nvim-telescope/telescope.nvim",
+        tag = "0.1.8",
+        lazy = false,
+        dependencies = { "nvim-lua/plenary.nvim" },
     },
 }
