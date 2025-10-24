@@ -3,7 +3,7 @@ return {
         "github/copilot.vim",
         config = function()
             vim.g.copilot_no_tab_map = true
-            vim.api.nvim_set_keymap("i", "<Tab>", 'copilot#Accept("")',
+            vim.api.nvim_set_keymap("i", "<Tab>", 'copilot#Accept("\\<Tab>")',
                 { silent = true, expr = true })
             vim.api.nvim_set_keymap("i", "<S-Tab>", "<Plug>(copilot-dismiss)", { silent = true })
         end,
@@ -151,6 +151,22 @@ return {
         "Isrothy/neominimap.nvim",
         version = "v3.x.x",
         lazy = false,
+
+        init = function()
+            vim.opt.wrap = true
+            vim.opt.sidescrolloff = 0
+
+            vim.g.neominimap = {
+                auto_enable = true,
+                layout = "split",
+                split = {
+                    minimap_width = 20,
+                    fix_width = true,
+                    direction = "right",
+                    close_if_last_window = true,  -- Auto-close minimap on :q of main buffer
+                },
+            }
+        end,
     },
     {
         "nvim-tree/nvim-tree.lua",
