@@ -176,7 +176,18 @@ return {
             "nvim-tree/nvim-web-devicons",
         },
         config = function()
-            require("nvim-tree").setup {}
+            require("nvim-tree").setup {
+                diagnostics = {
+                    enable = true,
+                    show_on_dirs = true,  -- Also show aggregated diagnostics on parent directories (recommended for visibility in larger projects)
+                    icons = {
+                        hint = "",
+                        info = "",
+                        warning = "",
+                        error = "",
+                    },
+                },  
+            }
         end,
     },
     {
