@@ -163,7 +163,7 @@ return {
                     minimap_width = 20,
                     fix_width = true,
                     direction = "right",
-                    close_if_last_window = true,  -- Auto-close minimap on :q of main buffer
+                    close_if_last_window = true, -- Auto-close minimap on :q of main buffer
                 },
             }
         end,
@@ -172,21 +172,15 @@ return {
         "nvim-tree/nvim-tree.lua",
         version = "*",
         lazy = false,
-        dependencies = {
-            "nvim-tree/nvim-web-devicons",
-        },
         config = function()
             require("nvim-tree").setup {
                 diagnostics = {
                     enable = true,
-                    show_on_dirs = true,  -- Also show aggregated diagnostics on parent directories (recommended for visibility in larger projects)
-                    icons = {
-                        hint = "",
-                        info = "",
-                        warning = "",
-                        error = "",
-                    },
-                },  
+                    show_on_dirs = true, -- Also show aggregated diagnostics on parent directories
+                },
+                view = {
+                    width = 40,
+                },
             }
         end,
     },
