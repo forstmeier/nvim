@@ -90,6 +90,8 @@ return {
 
             vim.lsp.config("tsserver", {})
 
+            vim.lsp.enable("ty")
+
             vim.lsp.config("lua_ls", {
                 settings = {
                     Lua = {
