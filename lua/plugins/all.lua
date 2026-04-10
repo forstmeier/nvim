@@ -52,7 +52,7 @@ return {
         config = function()
             require("mason").setup()
             require("mason-lspconfig").setup({
-                ensure_installed = { "ruff", "rust_analyzer", "gopls", "tsserver" },
+                ensure_installed = { "ruff", "rust_analyzer", "gopls", "ts_ls" },
                 automatic_installation = true,
             })
 
@@ -88,7 +88,7 @@ return {
                 },
             })
 
-            vim.lsp.config("tsserver", {})
+            vim.lsp.config("ts_ls", {})
 
             vim.lsp.enable("ty")
 
