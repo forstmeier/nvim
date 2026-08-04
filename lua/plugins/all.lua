@@ -50,7 +50,10 @@ return {
         dependencies = { "mason-org/mason.nvim", "mason-org/mason-lspconfig.nvim" },
         event = { "BufReadPost", "BufNewFile" },
         config = function()
-            require("mason").setup()
+            -- Append rather than prepend Mason's bin directory so a toolchain
+            -- provided by the project (devenv, .venv) takes precedence over
+            -- Mason's copy, which can lag far enough behind to break.
+            require("mason").setup({ PATH = "append" })
             require("mason-lspconfig").setup({
                 ensure_installed = { "ruff", "rust_analyzer", "gopls", "ts_ls" },
                 automatic_installation = true,
