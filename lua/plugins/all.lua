@@ -40,14 +40,6 @@ return {
         end,
     },
     {
-        "MeanderingProgrammer/render-markdown.nvim",
-        dependencies = { "nvim-treesitter/nvim-treesitter" },
-        ft = { "markdown" },
-        config = function()
-            require("render-markdown").setup({})
-        end,
-    },
-    {
         "windwp/nvim-autopairs",
         config = function()
             require("nvim-autopairs").setup({})
